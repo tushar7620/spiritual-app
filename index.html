@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Spiritual — Bhagavad Gita</title>
+<style>
+:root{--ink:#18202b;--muted:#68717e;--glass:rgba(255,255,255,.50);--stroke:rgba(255,255,255,.78);--accent:#765137;--bg:#edf1f5}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(circle at 10% 5%,#e2d2c1 0,transparent 30%),radial-gradient(circle at 90% 12%,#c9dceb 0,transparent 34%),linear-gradient(135deg,#f3f5f7,#e8edf2);min-height:100vh}
+button,input,select{font:inherit}.app{width:min(480px,100%);margin:auto;min-height:100vh;padding:16px 14px 112px}.glass{background:var(--glass);border:1px solid var(--stroke);box-shadow:0 20px 65px #3042561b;backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%)}
+.top{display:flex;justify-content:space-between;align-items:center;margin:4px 4px 16px}.logo{font-size:24px;font-weight:800}.om{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#ffffff70;border:1px solid #fff;font:24px Georgia}
+.page{display:none}.page.active{display:block}.page.slide-next{animation:pageNext .42s cubic-bezier(.2,.8,.2,1)}.page.slide-prev{animation:pagePrev .42s cubic-bezier(.2,.8,.2,1)}@keyframes pageNext{from{opacity:0;transform:translateX(34px) scale(.985)}to{opacity:1;transform:none}}@keyframes pagePrev{from{opacity:0;transform:translateX(-34px) scale(.985)}to{opacity:1;transform:none}}
+.hero{border-radius:30px;padding:23px;color:white;background:linear-gradient(135deg,#604b3a,#9d7657aa);min-height:190px;position:relative;overflow:hidden}.hero h1{font:700 29px/1.12 Georgia,serif;max-width:310px;margin:10px 0 18px}.eyebrow{font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.8}.search{padding:13px 15px;border-radius:16px;background:#ffffff2c;border:1px solid #ffffff65;font-size:13px;cursor:pointer}
+.section{display:flex;justify-content:space-between;align-items:center;margin:22px 3px 11px}.section h2{font-size:17px;margin:0}.section span{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.card{border-radius:23px;padding:17px}.card b{display:block;margin-top:8px}.card p{margin:5px 0 0;font-size:11px;line-height:1.5;color:var(--muted)}
+.verse{font:18px/1.8 Georgia,serif}.meaning{font:13px/1.65 Georgia,serif;color:#66594f;margin-top:9px}.ref{font-size:10px;color:var(--accent);margin-top:11px}
+.bookInfo{border-radius:25px;padding:17px}.bookTitle{font:700 18px Georgia,serif}.author{font-size:11px;color:var(--muted);margin-top:5px}.reader{border-radius:27px;overflow:hidden}.readerTop{padding:12px;display:flex;gap:8px;align-items:center;background:#ffffff55;border-bottom:1px solid #ffffffa8}.readerTop input{width:72px;padding:8px;border:1px solid #fff;border-radius:11px;background:#fff9;text-align:center}.readerTop button,.roundBtn{border:1px solid #fff;background:#fff9;border-radius:12px;padding:9px 11px;cursor:pointer}.primary{background:#765137!important;color:white;border-color:#765137!important}
+.tap{width:166px;height:166px;border-radius:50%;border:1px solid #fff;background:linear-gradient(145deg,#ffffffb8,#ffffff35);box-shadow:inset 0 2px 10px #fff8,0 18px 45px #624a3625;margin:15px auto;display:grid;place-items:center;cursor:pointer}.tap:active{transform:scale(.94)}.tap span{font-size:23px;font-weight:800}.tap small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.chant{border-radius:28px;padding:19px;text-align:center}.big{font-size:45px;font-weight:800}.progress{height:7px;background:#00000012;border-radius:99px;overflow:hidden;margin:12px 5px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#c48a55,#765137);border-radius:99px}.mantra{font:15px/1.85 Georgia,serif;margin:14px}.row{display:flex;gap:9px}.btn{flex:1;border:1px solid #fff;background:#fff9;border-radius:14px;padding:11px;cursor:pointer}.history{border-radius:24px;padding:16px}.stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff8a;font-size:12px}.stat:last-child{border:0}
+.nav{position:fixed;bottom:13px;left:50%;transform:translateX(-50%);width:min(450px,calc(100% - 25px));padding:8px;border-radius:26px;background:#ffffff8a;border:1px solid #fff;backdrop-filter:blur(28px);display:flex;justify-content:space-around;z-index:9;box-shadow:0 18px 50px #30425625}.nav button{border:0;background:transparent;color:#6d7682;font-size:10px;padding:7px 9px;border-radius:15px;cursor:pointer}.nav button{position:relative;transition:color .28s ease;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-width:0;flex:1;height:46px}.navIcon{width:21px;height:21px;display:grid;place-items:center;line-height:1}.navIcon svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.nav button span:last-child{font-size:9px;line-height:11px}.savedSection{margin-top:28px}.nav button:hover{transform:none}.nav button.active{background:transparent;color:var(--accent);transform:none;box-shadow:none}.nav::after{content:"";position:absolute;left:8px;top:8px;height:calc(100% - 16px);width:calc((100% - 16px)/4);border-radius:17px;background:#ffffff70;box-shadow:inset 0 1px 0 #fff,0 5px 16px #30425612;z-index:-1;transform:translateX(calc(var(--nav-index,0) * 100%));transition:transform .38s cubic-bezier(.2,.8,.2,1)}
+.fab{position:fixed;right:max(17px,calc((100vw - 480px)/2 + 17px));bottom:91px;width:59px;height:59px;border-radius:50%;border:1px solid #fff;background:#ffffffa8;backdrop-filter:blur(25px);box-shadow:0 15px 38px #3042562b;z-index:10;font-size:23px;cursor:pointer}
+.sheetWrap{display:none;position:fixed;inset:0;background:#17202a35;backdrop-filter:blur(8px);z-index:20;align-items:flex-end}.sheetWrap.open{display:flex}.sheet{width:min(480px,100%);margin:auto;padding:20px;border-radius:30px 30px 0 0;background:#f4f7f9d9;border:1px solid #fff;backdrop-filter:blur(35px);animation:up .3s ease}@keyframes up{from{transform:translateY(100%)}to{transform:none}}.sheet h2{margin:0}.sheet p{font-size:12px;color:var(--muted)}.opt{width:100%;text-align:left;border:1px solid #fff;background:#fff9;border-radius:17px;padding:15px;margin-top:9px;cursor:pointer}.close{float:right;border:0;border-radius:50%;background:#fff9;width:34px;height:34px}.bookmarkItem{margin-bottom:10px}.bookmarkItem button{margin-top:9px}
+@media(max-width:380px){.tap{width:145px;height:145px}}
+
+.gitaTools{border-radius:22px;padding:13px;margin-top:12px}.gitaTools input{width:100%;padding:12px 14px;border:1px solid #fff;border-radius:14px;background:#fff9;outline:none}.gitaVerse{border-radius:28px;padding:20px}.gitaChapter{font:700 15px Georgia,serif;color:var(--accent);margin-bottom:15px}.sanskrit{font:21px/2.05 Georgia,serif;text-align:center;white-space:pre-line}.divider{height:1px;background:#ffffffb8;margin:18px 0}.hindiLabel{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted)}.gitaHindi{font:16px/1.85 Georgia,serif;margin-top:7px}.searchResult{padding:13px;border-radius:17px;margin-bottom:8px;cursor:pointer}.searchResult .srRef{font-size:10px;color:var(--accent);font-weight:700}.searchResult .srText{font:14px/1.65 Georgia,serif;margin-top:4px}.gitaVerseHeader{align-items:center}.gitaVerseHeader select{margin-left:auto;min-width:145px;padding:9px 12px;border:1px solid #fff;border-radius:13px;background:#ffffffaa;color:var(--ink);outline:none;box-shadow:0 6px 18px #30425612}.searchHighlight{background:#ffe58f;border-radius:5px;padding:1px 3px;box-shadow:0 0 0 1px #e4b93d55}.gitaTools select{min-width:0}.simpleLabel{display:block;margin-top:18px}.gitaSimple{font-size:14px;line-height:1.8;color:#4f5660;background:#ffffff45;border:1px solid #ffffff88;border-radius:16px;padding:12px;margin-top:7px}.gitaBook{perspective:1400px}.gitaVerse{position:relative;transform-style:preserve-3d;box-shadow:0 22px 60px #30425618;overflow:hidden}.gitaVerse.flipping-next{animation:flipNext .62s cubic-bezier(.25,.7,.25,1)}.gitaVerse.flipping-prev{animation:flipPrev .62s cubic-bezier(.25,.7,.25,1)}@keyframes flipNext{0%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}45%{transform:rotateY(-88deg);box-shadow:-30px 22px 70px #30425625}100%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}}@keyframes flipPrev{0%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}45%{transform:rotateY(88deg);box-shadow:30px 22px 70px #30425625}100%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}}.bookEdge{position:absolute;top:0;bottom:0;width:7px;background:linear-gradient(#fff8,#b59b7b55,#fff8);opacity:.6}.bookEdge.left{left:0}.bookEdge.right{right:0}.sourceNote{font-size:10px;color:var(--muted);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="logo">Spiritual</div><div class="om">ॐ</div></header>
+
+<section id="home" class="page active">
+ <div class="hero"><div class="eyebrow">Wisdom • Practice • Peace</div><h1>Let timeless wisdom guide your day.</h1><div class="search" onclick="openBook()">⌕ &nbsp; Search Bhagavad Gita…</div></div>
+ <div class="section"><h2>Explore</h2><span>Today</span></div>
+ <div class="grid">
+  <div class="card glass" onclick="openBook()"><div style="font-size:25px">📖</div><b>Bhagavad Gita</b><p>18 chapters • 700 verses</p></div>
+  <div class="card glass" onclick="go('chant')"><div style="font-size:25px">🕉️</div><b>Naam Chanting</b><p>108 counts • malas</p></div>
+ </div>
+ <div class="section"><h2>Verse of the Day</h2><span id="dayRef"></span></div>
+ <div class="card glass"><div class="verse" id="daySloka"></div><div class="meaning" id="dayHindi"></div><div class="ref" id="daySource"></div></div>
+</section>
+
+<section id="gita" class="page">
+ <div class="section"><h2>Bhagavad Gita</h2><span id="gitaStatus">Loading…</span></div>
+ <div class="gitaTools glass">
+   <input id="gitaSearch" type="search" placeholder="Search in English, Hindi, Sanskrit or any topic…" oninput="searchGita(this.value)">
+ </div>
+ <div id="gitaSearchResults" style="margin-top:10px"></div>
+ <div class="section gitaVerseHeader"><h2 id="gitaRef">Chapter 1 • Verse 1</h2><select id="chapterFilter" onchange="filterChapter(this.value)" aria-label="Select chapter"><option value="all">All Chapters</option></select></div>
+ <div class="gitaBook">
+  <article class="gitaVerse glass" id="gitaVerseCard">
+   <div class="bookEdge left"></div><div class="bookEdge right"></div>
+   <div class="gitaChapter" id="gitaChapterName">Chapter 1</div>
+   <div class="sanskrit" id="gitaSanskrit">धृतराष्ट्र उवाच ।<br>धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।<br>मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ॥१॥</div>
+   <div class="divider"></div>
+   <div class="hindiLabel">Hindi Translation</div>
+   <div class="gitaHindi" id="gitaHindi">धृतराष्ट्र बोले— हे संजय! धर्मभूमि कुरुक्षेत्र में युद्ध की इच्छा से एकत्र हुए मेरे और पाण्डु के पुत्रों ने क्या किया?</div>
+   <div class="hindiLabel simpleLabel">Simple Hindi Explanation</div>
+   <div class="gitaSimple" id="gitaSimple">इस श्लोक का सरल भावार्थ ऊपर दिए हिंदी अर्थ को आसान भाषा में समझने में मदद करता है।</div>
+   <div class="row" style="margin-top:18px">
+    <button class="btn" onclick="prevVerse()">‹ Previous</button>
+    <button class="btn primary" onclick="bookmarkGitaVerse()">🔖 Save</button>
+    <button class="btn" onclick="nextVerse()">Next ›</button>
+   </div>
+   <div class="sourceNote">18 chapters • 700 verses • Sanskrit + Hindi translation<br><span style="font-size:9px">Source: Hindi Gita text corpus</span></div>
+  </article>
+ </div>
+ <div class="section savedSection"><h2>Saved Shlokas</h2><span id="bookmarkCount">0 saved</span></div>
+ <div id="bookmarkList"></div>
+ <div id="bookmarkEmpty" class="card glass"><b>No saved shlokas yet</b><p>Save any Gita shloka with the bookmark button.</p></div>
+</section>
+
+<section id="chant" class="page">
+ <div class="section"><h2>Naam Chanting</h2><span>108 = 1 mala</span></div>
+ <div class="chant glass">
+  <div class="big" id="hkCount">0</div><div style="font-size:11px;color:var(--muted)" id="hkMala">0 malas</div><div class="progress"><i id="hkBar"></i></div>
+  <div class="mantra">Hare Krishna Hare Krishna<br>Krishna Krishna Hare Hare<br>Hare Rama Hare Rama<br>Rama Rama Hare Hare</div>
+  <button class="tap" onclick="addChant('hk')"><div><span>Tap</span><small>Hare Krishna</small></div></button>
+  <div class="row"><button class="btn" onclick="undo()">Undo</button><button class="btn" onclick="reset()">Reset</button></div>
+ </div>
+ <div class="section"><h2>Radha Chant</h2><span>108 = 1 mala</span></div>
+ <div class="chant glass">
+  <div class="big" id="radhaCount">0</div><div style="font-size:11px;color:var(--muted)" id="radhaMala">0 malas</div><div class="progress"><i id="radhaBar"></i></div>
+  <div class="mantra" style="font-size:29px">Radha</div>
+  <button class="tap" onclick="addChant('radha')"><div><span>Radha</span><small>Tap</small></div></button>
+  <div class="row"><button class="btn" onclick="undoType('radha')">Undo</button><button class="btn" onclick="resetType('radha')">Reset</button></div>
+ </div>
+ <div class="section"><h2>Mala History</h2><span>Real saved data</span></div>
+ <div class="history glass">
+  <div class="row"><input id="histDate" type="date" onchange="renderHistory()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><select id="histRange" onchange="renderHistory()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><option value="day">Day</option><option value="month">Month</option><option value="year">Year</option></select></div>
+  <div id="historyList"></div><button class="btn" style="width:100%;margin-top:10px" onclick="resetMalaHistory()">Reset Mala History</button>
+ </div>
+</section>
+
+<section id="stats" class="page">
+ <div class="section"><h2>Chanting History</h2><span>Real data only</span></div>
+ <div class="history glass"><div class="row"><input id="statsDate" type="date" onchange="renderStats()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><select id="statsRange" onchange="renderStats()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><option value="month">Month</option><option value="year">Year</option><option value="day">Day</option></select></div><div id="statsList"></div><button class="btn" style="width:100%;margin-top:10px" onclick="resetMalaHistory()">Reset Mala History</button></div>
+</section>
+</div>
+
+<button class="fab" onclick="openAI()">✦</button>
+<nav class="nav">
+ <button data-page="home" class="active" onclick="go('home',this)"><span class="navIcon"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M9 21v-6h6v6"/></svg></span><span>Home</span></button>
+ <button data-page="gita" onclick="go('gita',this)"><span class="navIcon"><svg viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H20v17H7.5A2.5 2.5 0 0 0 5 21.5z"/><path d="M5 4.5v17"/><path d="M9 7h7M9 11h7M9 15h5"/></svg></span><span>Gita</span></button>
+ <button data-page="chant" onclick="go('chant',this)"><span class="navIcon"><svg viewBox="0 0 24 24"><path d="M12 21c4.2-3.1 7-6.3 7-10.1C19 7.5 17 5 14.5 5c-1.4 0-2.6.7-3.5 1.8C10.1 5.7 8.9 5 7.5 5 5 5 3 7.5 3 10.9 3 14.7 5.8 17.9 12 21z"/><path d="M8 10.5c1.2 1.1 2.5 1.1 4 0 1.5-1.1 2.8-1.1 4 0"/></svg></span><span>Chant</span></button>
+ <button data-page="stats" onclick="go('stats',this)"><span class="navIcon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7v5l3.5 2"/><path d="M5 4.5 3.5 3M19 4.5 20.5 3"/></svg></span><span>History</span></button>
+</nav>
+
+<div id="ai" class="sheetWrap" onclick="if(event.target===this)closeAI()">
+ <div class="sheet"><button class="close" onclick="closeAI()">×</button><h2>Spiritual Search</h2><p>Choose how you want to ask.</p>
+  <button class="opt" onclick="typingSearch()">⌨ &nbsp; <b>Typing search</b><br><small>Open the keyboard and search the book</small></button>
+  <button class="opt" onclick="voiceSearch()">🎙 &nbsp; <b>Voice searching</b><br><small>Request microphone access and speak</small></button>
+ </div>
+</div>
+
+<script>
+const STORE='spiritual_v3';
+let data=JSON.parse(localStorage.getItem(STORE)||'{"last":"hk","sessions":{}}');
+let recognition=null, micStream=null;
+
+function save(){localStorage.setItem(STORE,JSON.stringify(data))}
+function dayKey(){return new Date().toISOString().slice(0,10)}
+function day(){return data.sessions[dayKey()]||{hk:0,radha:0}}
+function go(id,el){
+ const pages=['home','gita','chant','stats'];
+ const old=document.querySelector('.page.active'); const oldId=old?.id; const from=pages.indexOf(oldId); const to=pages.indexOf(id);
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active','slide-next','slide-prev'));
+ const target=document.getElementById(id); target.classList.add('active',to>=from?'slide-next':'slide-prev');
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+ const active=el||document.querySelector('[data-page="'+id+'"]'); active?.classList.add('active');
+ document.querySelector('.nav')?.style.setProperty('--nav-index',Math.max(0,to));
+ if(id==='chant'||id==='stats')update(); if(id==='gita'&&!gitaData)loadGita();
+}
+const GITA_DATA_URL='https://raw.githubusercontent.com/kashishkhullar/gita_json/master/dataset_hindi.json';
+let gitaData=null,gitaIndex=0,gitaResults=[];
+async function loadGita(){
+ try{
+  const r=await fetch(GITA_DATA_URL,{cache:'force-cache'});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const raw=await r.json();
+  const verses=[];
+  const chapters=[];
+  Object.keys(raw.chapters||{}).forEach(k=>{
+    const c=raw.chapters[k]; chapters.push({n:Number(k),name:c.name||('Chapter '+k)});
+  });
+  Object.keys(raw.verses||{}).forEach(ch=>{
+    Object.keys(raw.verses[ch]||{}).forEach(vn=>{
+      const v=raw.verses[ch][vn];
+      verses.push({chapter:Number(ch),verse:Number(String(vn).split('-')[0]),ref:ch+'.'+vn,sanskrit:v.text||'',hindi:v.meaning||'',iast:'',speaker:''});
+    });
+  });
+  verses.sort((a,b)=>a.chapter-b.chapter||a.verse-b.verse);
+  gitaData={verses,chapters};
+  populateChapterFilter();
+  renderGitaVerse(0);
+  setDailyWisdomFromGita();
+  gitaStatus.textContent='700 verses • 18 chapters';
+  if(pendingGitaSearch) searchGita(pendingGitaSearch);
+ }catch(e){
+  gitaStatus.textContent='Unable to load Gita data';
+  document.getElementById('gitaHindi').textContent='Gita text could not be loaded. Please open this preview with Live Server and refresh.';
+  console.error(e);
+ }
+}
+function populateChapterFilter(){
+ const sel=document.getElementById('chapterFilter'); if(!sel||!gitaData)return;
+ sel.innerHTML='<option value="all">All Chapters</option>'+gitaData.chapters.map(c=>`<option value="${c.n}">Chapter ${c.n}${c.name&&c.name!=='Chapter '+c.n?' • '+escapeHtml(c.name):''}</option>`).join('');
+}
+function simpleHindiExplanation(hindi, sanskrit){
+ const text=String(hindi||'').trim();
+ if(!text)return 'इस श्लोक का सरल भावार्थ उपलब्ध नहीं है।';
+ return 'सरल भावार्थ: '+text+' इसे आसान भाषा में समझें तो यह श्लोक अपने संदर्भ में मनुष्य को जीवन, कर्तव्य और सही आचरण के बारे में समझाता है।';
+}
+function setDailyWisdomFromGita(){
+ if(!gitaData?.verses?.length)return;
+ const day=Math.floor(new Date().setHours(0,0,0,0)/86400000); const v=gitaData.verses[Math.abs(day)%gitaData.verses.length];
+ document.getElementById('dayRef').textContent=`Chapter ${v.chapter} • Verse ${v.verse}`;
+ document.getElementById('daySloka').innerHTML=escapeHtml(v.sanskrit);
+ document.getElementById('dayHindi').textContent=v.hindi;
+ document.getElementById('daySource').textContent='Daily wisdom';
+}
+function normalizeSearchText(text){
+ return String(text||'').toLowerCase()
+   .normalize('NFD').replace(/[\u0300-\u036f]/g,'')
+   .replace(/[^\p{L}\p{N}\s]/gu,' ')
+   .replace(/\s+/g,' ').trim();
+}
+
+// English/Roman topic words -> common Hindi/Sanskrit Gita words.
+// This keeps search useful even when the user cannot type Devanagari.
+const SEARCH_SYNONYMS={
+ peace:['शांति','शान्ति','प्रशान्ति','शान्त'], calm:['शांत','शान्त','शांति','प्रशांत'],
+ love:['प्रेम','भक्ति','प्रिय','स्नेह','मैत्री'], god:['भगवान','ईश्वर','परमात्मा','माम','वासुदेव'],
+ bhagwan:['भगवान','ईश्वर','परमात्मा'], ishwar:['ईश्वर','भगवान','परमात्मा'],
+ dharma:['धर्म','स्वधर्म','कर्तव्य'], dharam:['धर्म','स्वधर्म','कर्तव्य'], duty:['धर्म','कर्तव्य','कर्म'],
+ karma:['कर्म','कर्मणि','कर्मफल','कर्मयोग'], work:['कर्म','कर्मयोग','कार्य'], action:['कर्म','क्रिया','कार्य'],
+ worry:['चिंता','शोक','दुःख'], chinta:['चिंता','शोक','दुःख'], tension:['चिंता','शोक','दुःख'],
+ sorrow:['शोक','दुःख','विषाद'], दुख:['दुःख','शोक','विषाद'], dukh:['दुःख','शोक','विषाद'], sadness:['शोक','दुःख'],
+ happiness:['सुख','आनन्द','प्रसन्न','हर्ष'], happy:['सुख','प्रसन्न','आनन्द'], joy:['आनन्द','सुख','हर्ष'],
+ anger:['क्रोध','काम','रजोगुण'], angry:['क्रोध'], krodh:['क्रोध'],
+ fear:['भय','भीति','अभय'], afraid:['भय'], courage:['अभय','वीर्य'],
+ mind:['मन','चित्त','मनस'], thoughts:['मन','विचार','चित्त'], thought:['विचार','मन'],
+ meditation:['ध्यान','योग','समाधि'], meditate:['ध्यान','योग'], dhyan:['ध्यान','योग'], yoga:['योग'],
+ knowledge:['ज्ञान','विज्ञान','बुद्धि'], wisdom:['ज्ञान','बुद्धि','विवेक'], gyan:['ज्ञान','विज्ञान'],
+ devotion:['भक्ति','भज','श्रद्धा'], bhakti:['भक्ति','श्रद्धा','प्रेम'], faith:['श्रद्धा','विश्वास','भक्ति'],
+ soul:['आत्मा','आत्मन्','क्षेत्रज्ञ'], atma:['आत्मा','आत्मन्'], self:['आत्मा','स्वयं','आत्मन्'],
+ body:['शरीर','देह'], death:['मृत्यु','मरण'], life:['जीवन','जन्म','मृत्यु'], birth:['जन्म'], rebirth:['जन्म','पुनर्जन्म'],
+ desire:['काम','इच्छा','कामना'], greed:['लोभ','काम'], attachment:['आसक्ति','संग'], desireless:['निष्काम'],
+ ego:['अहंकार','अहं'], pride:['अहंकार','मान','दर्प'], jealousy:['ईर्ष्या','द्वेष'], hate:['द्वेष'], hatred:['द्वेष'],
+ sin:['पाप'], virtue:['पुण्य','धर्म'], good:['सत्त्व','धर्म','पुण्य'], evil:['अधर्म','पाप'],
+ truth:['सत्य'], lie:['असत्य'], truthfulness:['सत्य'],
+ teacher:['गुरु','आचार्य'], student:['शिष्य'], friend:['मित्र','सुहृद'], enemy:['शत्रु'],
+ family:['कुटुम्ब','बान्धव','परिवार'], father:['पिता'], mother:['माता'], brother:['भ्राता'],
+ war:['युद्ध','रण'], battle:['युद्ध','रण'], fight:['युद्ध','युध्य'], battlefield:['कुरुक्षेत्र','युद्ध'],
+ world:['जगत्','लोक','संसार'], universe:['जगत्','विश्व','ब्रह्माण्ड'], nature:['प्रकृति'], creation:['सृष्टि'],
+ godly:['दैवी','दैवीसम्पद्'], demon:['आसुरी','राक्षस'], heaven:['स्वर्ग'], hell:['नरक'], liberation:['मोक्ष','मुक्ति'], moksha:['मोक्ष','मुक्ति'],
+ freedom:['मुक्ति','मोक्ष'], detachment:['वैराग्य','अनासक्ति'], renunciation:['त्याग','संन्यास'], sacrifice:['यज्ञ','त्याग'],
+ prayer:['प्रार्थना','भक्ति'], mantra:['मन्त्र','ॐ'], om:['ॐ'], krishna:['कृष्ण'], arjuna:['अर्जुन'],
+ shanti:['शांति','शान्ति'], bhagwan:['भगवान','ईश्वर'], prem:['प्रेम','भक्ति'], seva:['सेवा','कर्म'],
+ meditation:['ध्यान','ध्यानयोग'], focus:['एकाग्रता','ध्यान','मन'], concentration:['एकाग्रता','ध्यान'],
+ discipline:['संयम','नियम','तप'], control:['संयम','निग्रह'], senses:['इन्द्रिय','इन्द्रियाँ'],
+ food:['आहार','अन्न'], sleep:['निद्रा','नींद'], health:['आरोग्य','शरीर'],
+ time:['काल','समय'], death:['मृत्यु','काल'], fear:['भय','अभय'], peace:['शांति','शान्ति'],
+ duty:['कर्तव्य','धर्म','कर्म'], purpose:['धर्म','कर्तव्य'], meaning:['ज्ञान','धर्म','तत्त्व'],
+ success:['सिद्धि','जय','सफलता'], failure:['असफलता','सिद्धि'], victory:['जय','विजय'], loss:['हानि'], gain:['लाभ'],
+ rich:['धन','सम्पत्ति'], wealth:['धन','सम्पत्ति'], money:['धन'], poverty:['दरिद्र'],
+ teacher:['गुरु','आचार्य'], teaching:['उपदेश','ज्ञान'], lesson:['उपदेश','ज्ञान'], answer:['उत्तर'], question:['प्रश्न'],
+ meditation:['ध्यान'], breath:['प्राण','श्वास'], breathing:['प्राण','श्वास'], energy:['प्राण','तेज','शक्ति'],
+ strength:['बल','शक्ति','वीर्य'], weakness:['दुर्बलता'], desire:['कामना','इच्छा'], temptation:['मोह','काम'],
+ attachment:['आसक्ति','संग'], material:['प्रकृति','भौतिक'], spiritual:['आध्यात्मिक','आत्मा'], spirituality:['आध्यात्मिक','भक्ति','ज्ञान']
+};
+
+function expandSearchTerm(term){
+ const t=normalizeSearchText(term);
+ const out=[t];
+ if(SEARCH_SYNONYMS[t]) out.push(...SEARCH_SYNONYMS[t].map(normalizeSearchText));
+ // Common Roman spellings / stems.
+ const stem=t.replace(/(ing|ed|ly|s)$/,'');
+ if(stem!==t && SEARCH_SYNONYMS[stem]) out.push(...SEARCH_SYNONYMS[stem].map(normalizeSearchText));
+ return [...new Set(out.filter(Boolean))];
+}
+
+function highlightMatches(text, query){
+ let out=escapeHtml(text); const terms=[];
+ normalizeSearchText(query).split(/\s+/).filter(Boolean).forEach(t=>{terms.push(t); expandSearchTerm(t).forEach(x=>terms.push(x));});
+ const uniq=[...new Set(terms)].filter(x=>x.length>1).sort((a,b)=>b.length-a.length);
+ uniq.forEach(term=>{
+   const safe=term.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+   try{out=out.replace(new RegExp(safe,'gi'),m=>`<mark class="searchHighlight">${m}</mark>`)}catch(e){}
+ });
+ return out;
+}
+function openSearchResult(i){const v=gitaResults[i];if(!v)return;const idx=gitaData.verses.indexOf(v);renderGitaVerse(idx);document.getElementById('gitaVerseCard').scrollIntoView({behavior:'smooth',block:'center'})}
+function escapeHtml(x){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function bookmarkGitaVerse(){
+ if(!gitaData)return;const v=gitaData.verses[gitaIndex];const key='spiritual_gita_bookmarks_v2';const a=JSON.parse(localStorage.getItem(key)||'[]');if(!a.some(x=>x.ref===v.ref))a.unshift({ref:v.ref,sanskrit:v.sanskrit,hindi:v.hindi});localStorage.setItem(key,JSON.stringify(a));renderBookmarks();
+}
+function openBook(){go('gita')}
+function continueReading(){openBook()}
+function renderBookmarks(){const arr=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');const count=document.getElementById('bookmarkCount'),list=document.getElementById('bookmarkList'),empty=document.getElementById('bookmarkEmpty');if(!count||!list||!empty)return;count.textContent=arr.length+' saved';empty.style.display=arr.length?'none':'block';list.innerHTML=arr.map((x,i)=>'<div class="card glass bookmarkItem"><b>Verse '+escapeHtml(x.ref)+'</b><p class="sanskrit" style="font-size:15px;text-align:left">'+escapeHtml(x.sanskrit)+'</p><p>'+escapeHtml(x.hindi)+'</p><button class="btn primary" onclick="openGitaBookmark('+i+')">Open shloka</button><button class="btn" style="margin-top:7px" onclick="deleteGitaBookmark('+i+')">Remove</button></div>').join('')}
+function renderBookmarkButton(){const v=gitaData?.verses?.[gitaIndex];if(!v)return;const a=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');const b=document.querySelector('.gitaVerse .btn.primary');if(b)b.textContent=a.some(x=>x.ref===v.ref)?'🔖 Saved':'🔖 Save'}
+function bookmarkGitaVerse(){if(!gitaData)return;const v=gitaData.verses[gitaIndex],key='spiritual_gita_bookmarks_v2',a=JSON.parse(localStorage.getItem(key)||'[]');if(!a.some(x=>x.ref===v.ref))a.unshift({ref:v.ref,sanskrit:v.sanskrit,hindi:v.hindi});localStorage.setItem(key,JSON.stringify(a));renderBookmarks();renderBookmarkButton()}
+function openGitaBookmark(i){const a=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]'),x=a[i];if(!x||!gitaData)return;const idx=gitaData.verses.findIndex(v=>v.ref===x.ref);if(idx>=0)renderGitaVerse(idx);document.getElementById('gitaVerseCard').scrollIntoView({behavior:'smooth',block:'center'})}
+function deleteGitaBookmark(i){const a=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');a.splice(i,1);localStorage.setItem('spiritual_gita_bookmarks_v2',JSON.stringify(a));renderBookmarks();renderBookmarkButton()}
+function openAI(){document.getElementById('ai').classList.add('open')}
+function closeAI(){document.getElementById('ai').classList.remove('open')}
+function typingSearch(){closeAI();openBook();setTimeout(()=>{document.getElementById('gitaSearch').focus();document.getElementById('gitaSearch').scrollIntoView({behavior:'smooth',block:'center'});},350)}
+async function voiceSearch(){
+ closeAI();openBook();
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(R){
+  recognition=new R();recognition.lang='en-IN';recognition.interimResults=false;recognition.continuous=false;
+  recognition.onstart=()=>alert('Microphone is active. Speak now.');
+  recognition.onresult=e=>{const text=e.results[0][0].transcript;document.getElementById('gitaSearch').value=text;searchGita(text);document.getElementById('gitaSearch').scrollIntoView({behavior:'smooth',block:'center'});};
+  recognition.onerror=e=>{if(e.error==='not-allowed'||e.error==='service-not-allowed') micFallback(); else alert('Voice search error: '+e.error)};
+  recognition.onend=()=>{recognition=null};
+  try{recognition.start();return}catch(e){}
+ }
+ micFallback();
+}
+async function micFallback(){
+ try{
+  micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  alert('Microphone permission granted. This browser does not provide speech-to-text here. Use your device/Google voice keyboard to dictate into a search field.');
+  micStream.getTracks().forEach(t=>t.stop());micStream=null;
+ }catch(e){alert('Microphone permission was denied or unavailable. Please allow microphone access in the browser settings, or use Google/Gboard voice input.')}
+}
+function vibrate(){if(navigator.vibrate)navigator.vibrate([120,60,180])}
+function addChant(type){
+ const k=dayKey(),d=day(),before=Math.floor(d[type]/108);d[type]++;data.sessions[k]=d;data.last=type;save();update();
+ if(Math.floor(d[type]/108)>before)vibrate()
+}
+function undoType(type){const d=day();if(d[type]>0)d[type]--;data.last=type;if(d.hk===0&&d.radha===0)delete data.sessions[dayKey()];else data.sessions[dayKey()]=d;save();update()}
+function resetType(type){const d=day();d[type]=0;data.last=type;if(d.hk===0&&d.radha===0)delete data.sessions[dayKey()];else data.sessions[dayKey()]=d;save();update()}
+function undo(){undoType(data.last||'hk')}
+function reset(){resetType(data.last||'hk')}
+function completed(s){return{hk:Math.floor((s.hk||0)/108),radha:Math.floor((s.radha||0)/108)}}
+function resetMalaHistory(){
+ if(!Object.keys(data.sessions||{}).length)return;
+ if(!confirm('Reset all saved mala history? This will remove every recorded chanting day.'))return;
+ data.sessions={};data.last='hk';save();update();
+}
+function update(){const d=day();hkCount.textContent=d.hk;hkMala.textContent=Math.floor(d.hk/108)+' malas';hkBar.style.width=(d.hk%108)/108*100+'%';radhaCount.textContent=d.radha;radhaMala.textContent=Math.floor(d.radha/108)+' malas';radhaBar.style.width=(d.radha%108)/108*100+'%';renderHistory();renderStats()}
+function renderHistory(){
+ const base=histDate.value||dayKey(),range=histRange.value,arr=[];
+ Object.entries(data.sessions).forEach(([date,s])=>{const c=completed(s);if(!c.hk&&!c.radha)return;const d=new Date(date+'T12:00:00'),b=new Date(base+'T12:00:00');const ok=range==='day'?date===base:range==='month'?d.getFullYear()===b.getFullYear()&&d.getMonth()===b.getMonth():d.getFullYear()===b.getFullYear();if(ok)arr.push({date,...c})});
+ arr.sort((a,b)=>b.date.localeCompare(a.date));historyList.innerHTML=arr.length?arr.map(x=>'<div class="stat"><span>'+x.date+'</span><b>'+((x.hk||0)+(x.radha||0))+' malas</b></div>').join(''):'<p style="font-size:12px;color:var(--muted)">No completed malas for this period.</p>'
+}
+function renderStats(){
+ const base=statsDate.value||dayKey(),range=statsRange.value,t={hk:0,radha:0,days:0};
+ Object.entries(data.sessions).forEach(([date,s])=>{const c=completed(s),d=new Date(date+'T12:00:00'),b=new Date(base+'T12:00:00');const ok=range==='day'?date===base:range==='month'?d.getFullYear()===b.getFullYear()&&d.getMonth()===b.getMonth():d.getFullYear()===b.getFullYear();if(ok&&(c.hk+c.radha)){t.hk+=c.hk;t.radha+=c.radha;t.days++}});
+ statsList.innerHTML=t.days?'<div class="stat"><span>Hare Krishna</span><b>'+t.hk+' malas</b></div><div class="stat"><span>Radha Naam</span><b>'+t.radha+' malas</b></div><div class="stat"><span>Total</span><b>'+(t.hk+t.radha)+' malas</b></div><div class="stat"><span>Active days</span><b>'+t.days+'</b></div>':'<p style="font-size:12px;color:var(--muted)">No completed malas for this period.</p>'
+}
+// A small offline fallback is shown immediately; once the full Gita corpus loads,
+// the app automatically selects a different wisdom verse for each calendar day.
+const dayVerses=[
+ ['2.47','कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।','तुम्हारा अधिकार केवल कर्म करने में है, उसके फलों पर नहीं।'],
+ ['6.5','उद्धरेदात्मनात्मानं नात्मानमवसादयेत्।','मनुष्य को अपने प्रयास से स्वयं को ऊपर उठाना चाहिए, स्वयं को नीचे नहीं गिराना चाहिए।'],
+ ['12.13','अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च।','जो किसी से द्वेष नहीं करता और सबके प्रति मित्रता व करुणा रखता है, वह भगवान को प्रिय है।'],
+ ['18.66','सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।','सब कुछ छोड़कर मेरी शरण में आओ; पूरी श्रद्धा से परम सत्य पर भरोसा रखो।']
+];
+const fallback=dayVerses[new Date().getDate()%dayVerses.length];
+dayRef.textContent='Gita '+fallback[0];daySloka.textContent=fallback[1];dayHindi.textContent=fallback[2];daySource.textContent='Bhagavad Gita • Chapter '+fallback[0].split('.')[0]+' • Verse '+fallback[0].split('.')[1];
+histDate.value=dayKey();statsDate.value=dayKey();document.querySelector('.nav').style.setProperty('--nav-index','0');renderBookmarks();update();
+
+function renderGitaVerse(idx, direction=''){
+ if(!gitaData?.verses?.length)return;
+ gitaIndex=Math.max(0,Math.min(idx,gitaData.verses.length-1));
+ const v=gitaData.verses[gitaIndex];
+ const card=document.getElementById('gitaVerseCard');
+ if(direction && card){card.classList.remove('flipping-next','flipping-prev'); void card.offsetWidth; card.classList.add(direction==='next'?'flipping-next':'flipping-prev');}
+ document.getElementById('gitaRef').textContent=`Chapter ${v.chapter} • Verse ${v.verse}`;
+ document.getElementById('gitaChapterName').textContent=`Chapter ${v.chapter}`;
+ document.getElementById('gitaSanskrit').textContent=v.sanskrit||'';
+ document.getElementById('gitaHindi').textContent=v.hindi||'';
+ document.getElementById('gitaSimple').textContent=simpleHindiExplanation(v.hindi,v.sanskrit);
+ renderBookmarkButton();
+}
+function nextVerse(){
+ if(!gitaData?.verses?.length)return;
+ renderGitaVerse(Math.min(gitaIndex+1,gitaData.verses.length-1),'next');
+}
+function prevVerse(){
+ if(!gitaData?.verses?.length)return;
+ renderGitaVerse(Math.max(gitaIndex-1,0),'prev');
+}
+function filterChapter(value){
+ if(!gitaData?.verses?.length)return;
+ const box=document.getElementById('gitaSearchResults');
+ box.innerHTML='';
+ gitaResults=[];
+ if(value==='all'){renderGitaVerse(0);return;}
+ const idx=gitaData.verses.findIndex(v=>v.chapter===Number(value));
+ if(idx>=0)renderGitaVerse(idx);
+}
+let pendingGitaSearch='';
+function searchGita(q){
+ q=String(q||'').trim(); pendingGitaSearch=q;
+ const box=document.getElementById('gitaSearchResults');
+ if(!box)return;
+ if(!gitaData?.verses?.length){
+   box.innerHTML=q?'<div class="card glass"><p>Loading Gita search…</p></div>':'';
+   if(!gitaData)loadGita();
+   return;
+ }
+ const selected=document.getElementById('chapterFilter')?.value||'all';
+ if(!q){gitaResults=[];box.innerHTML='';return;}
+ const terms=normalizeSearchText(q).split(/\s+/).filter(Boolean);
+ gitaResults=gitaData.verses.filter(v=>{
+   if(selected!=='all'&&v.chapter!==Number(selected))return false;
+   const hay=normalizeSearchText([v.sanskrit,v.hindi,v.ref,'chapter '+v.chapter,'verse '+v.verse].join(' '));
+   return terms.every(t=>expandSearchTerm(t).some(x=>hay.includes(x)));
+ }).slice(0,50);
+ box.innerHTML=gitaResults.length
+  ? `<div style="font-size:11px;color:var(--muted);margin:8px 3px 10px">${gitaResults.length}${gitaResults.length===50?'+':''} related shlokas</div>`
+    +gitaResults.map((v,i)=>`<div class="searchResult glass" onclick="openSearchResult(${i})"><div class="srRef">Chapter ${v.chapter} • Verse ${v.verse}</div><div class="srText">${highlightMatches(v.sanskrit,q)}</div><div style="font-size:12px;color:var(--muted);margin-top:6px"><b>Hindi translation:</b> ${highlightMatches(v.hindi,q)}</div></div>`).join('')
+  : `<div class="card glass"><p>No related Gita shloka found for <b>${escapeHtml(q)}</b>.</p><p style="font-size:12px;color:var(--muted)">Try words like peace, karma, duty, mind, love, God, knowledge, devotion, meditation, anger, fear, happiness, or their Roman/Hindi forms.</p></div>`;
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Spiritual — Bhagavad Gita</title>
+<style>
+:root{--ink:#18202b;--muted:#68717e;--glass:rgba(255,255,255,.50);--stroke:rgba(255,255,255,.78);--accent:#765137;--bg:#edf1f5}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;background:radial-gradient(circle at 10% 5%,#e2d2c1 0,transparent 30%),radial-gradient(circle at 90% 12%,#c9dceb 0,transparent 34%),linear-gradient(135deg,#f3f5f7,#e8edf2);min-height:100vh}
+button,input,select{font:inherit}.app{width:min(480px,100%);margin:auto;min-height:100vh;padding:16px 14px 112px}.glass{background:var(--glass);border:1px solid var(--stroke);box-shadow:0 20px 65px #3042561b;backdrop-filter:blur(28px) saturate(150%);-webkit-backdrop-filter:blur(28px) saturate(150%)}
+.top{display:flex;justify-content:space-between;align-items:center;margin:4px 4px 16px}.logo{font-size:24px;font-weight:800}.om{width:43px;height:43px;border-radius:50%;display:grid;place-items:center;background:#ffffff70;border:1px solid #fff;font:24px Georgia}
+.page{display:none}.page.active{display:block}.page.slide-next{animation:pageNext .42s cubic-bezier(.2,.8,.2,1)}.page.slide-prev{animation:pagePrev .42s cubic-bezier(.2,.8,.2,1)}@keyframes pageNext{from{opacity:0;transform:translateX(34px) scale(.985)}to{opacity:1;transform:none}}@keyframes pagePrev{from{opacity:0;transform:translateX(-34px) scale(.985)}to{opacity:1;transform:none}}
+.hero{border-radius:30px;padding:23px;color:white;background:linear-gradient(135deg,#604b3a,#9d7657aa);min-height:190px;position:relative;overflow:hidden}.hero h1{font:700 29px/1.12 Georgia,serif;max-width:310px;margin:10px 0 18px}.eyebrow{font-size:11px;letter-spacing:.7px;text-transform:uppercase;opacity:.8}.search{padding:13px 15px;border-radius:16px;background:#ffffff2c;border:1px solid #ffffff65;font-size:13px;cursor:pointer}
+.section{display:flex;justify-content:space-between;align-items:center;margin:22px 3px 11px}.section h2{font-size:17px;margin:0}.section span{font-size:11px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.card{border-radius:23px;padding:17px}.card b{display:block;margin-top:8px}.card p{margin:5px 0 0;font-size:11px;line-height:1.5;color:var(--muted)}
+.verse{font:18px/1.8 Georgia,serif}.meaning{font:13px/1.65 Georgia,serif;color:#66594f;margin-top:9px}.ref{font-size:10px;color:var(--accent);margin-top:11px}
+.bookInfo{border-radius:25px;padding:17px}.bookTitle{font:700 18px Georgia,serif}.author{font-size:11px;color:var(--muted);margin-top:5px}.reader{border-radius:27px;overflow:hidden}.readerTop{padding:12px;display:flex;gap:8px;align-items:center;background:#ffffff55;border-bottom:1px solid #ffffffa8}.readerTop input{width:72px;padding:8px;border:1px solid #fff;border-radius:11px;background:#fff9;text-align:center}.readerTop button,.roundBtn{border:1px solid #fff;background:#fff9;border-radius:12px;padding:9px 11px;cursor:pointer}.primary{background:#765137!important;color:white;border-color:#765137!important}
+.tap{width:166px;height:166px;border-radius:50%;border:1px solid #fff;background:linear-gradient(145deg,#ffffffb8,#ffffff35);box-shadow:inset 0 2px 10px #fff8,0 18px 45px #624a3625;margin:15px auto;display:grid;place-items:center;cursor:pointer}.tap:active{transform:scale(.94)}.tap span{font-size:23px;font-weight:800}.tap small{display:block;font-size:10px;color:var(--muted);margin-top:3px}.chant{border-radius:28px;padding:19px;text-align:center}.big{font-size:45px;font-weight:800}.progress{height:7px;background:#00000012;border-radius:99px;overflow:hidden;margin:12px 5px}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#c48a55,#765137);border-radius:99px}.mantra{font:15px/1.85 Georgia,serif;margin:14px}.row{display:flex;gap:9px}.btn{flex:1;border:1px solid #fff;background:#fff9;border-radius:14px;padding:11px;cursor:pointer}.history{border-radius:24px;padding:16px}.stat{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #ffffff8a;font-size:12px}.stat:last-child{border:0}
+.nav{position:fixed;bottom:13px;left:50%;transform:translateX(-50%);width:min(450px,calc(100% - 25px));padding:8px;border-radius:26px;background:#ffffff8a;border:1px solid #fff;backdrop-filter:blur(28px);display:flex;justify-content:space-around;z-index:9;box-shadow:0 18px 50px #30425625}.nav button{border:0;background:transparent;color:#6d7682;font-size:10px;padding:7px 9px;border-radius:15px;cursor:pointer}.nav button{position:relative;transition:color .28s ease}.nav button:hover{transform:none}.nav button.active{background:transparent;color:var(--accent);transform:none;box-shadow:none}.nav::after{content:"";position:absolute;left:8px;top:8px;height:calc(100% - 16px);width:calc((100% - 16px)/5);border-radius:17px;background:#ffffff70;box-shadow:inset 0 1px 0 #fff,0 5px 16px #30425612;z-index:-1;transform:translateX(calc(var(--nav-index,0) * 100%));transition:transform .38s cubic-bezier(.2,.8,.2,1)}
+.fab{position:fixed;right:max(17px,calc((100vw - 480px)/2 + 17px));bottom:91px;width:59px;height:59px;border-radius:50%;border:1px solid #fff;background:#ffffffa8;backdrop-filter:blur(25px);box-shadow:0 15px 38px #3042562b;z-index:10;font-size:23px;cursor:pointer}
+.sheetWrap{display:none;position:fixed;inset:0;background:#17202a35;backdrop-filter:blur(8px);z-index:20;align-items:flex-end}.sheetWrap.open{display:flex}.sheet{width:min(480px,100%);margin:auto;padding:20px;border-radius:30px 30px 0 0;background:#f4f7f9d9;border:1px solid #fff;backdrop-filter:blur(35px);animation:up .3s ease}@keyframes up{from{transform:translateY(100%)}to{transform:none}}.sheet h2{margin:0}.sheet p{font-size:12px;color:var(--muted)}.opt{width:100%;text-align:left;border:1px solid #fff;background:#fff9;border-radius:17px;padding:15px;margin-top:9px;cursor:pointer}.close{float:right;border:0;border-radius:50%;background:#fff9;width:34px;height:34px}.bookmarkItem{margin-bottom:10px}.bookmarkItem button{margin-top:9px}
+@media(max-width:380px){.tap{width:145px;height:145px}}
+
+.gitaTools{border-radius:22px;padding:13px;margin-top:12px}.gitaTools input{width:100%;padding:12px 14px;border:1px solid #fff;border-radius:14px;background:#fff9;outline:none}.gitaVerse{border-radius:28px;padding:20px}.gitaChapter{font:700 15px Georgia,serif;color:var(--accent);margin-bottom:15px}.sanskrit{font:21px/2.05 Georgia,serif;text-align:center;white-space:pre-line}.divider{height:1px;background:#ffffffb8;margin:18px 0}.hindiLabel{font-size:10px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted)}.gitaHindi{font:16px/1.85 Georgia,serif;margin-top:7px}.searchResult{padding:13px;border-radius:17px;margin-bottom:8px;cursor:pointer}.searchResult .srRef{font-size:10px;color:var(--accent);font-weight:700}.searchResult .srText{font:14px/1.65 Georgia,serif;margin-top:4px}.gitaTools select{min-width:0}.gitaBook{perspective:1400px}.gitaVerse{position:relative;transform-style:preserve-3d;box-shadow:0 22px 60px #30425618;overflow:hidden}.gitaVerse.flipping-next{animation:flipNext .62s cubic-bezier(.25,.7,.25,1)}.gitaVerse.flipping-prev{animation:flipPrev .62s cubic-bezier(.25,.7,.25,1)}@keyframes flipNext{0%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}45%{transform:rotateY(-88deg);box-shadow:-30px 22px 70px #30425625}100%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}}@keyframes flipPrev{0%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}45%{transform:rotateY(88deg);box-shadow:30px 22px 70px #30425625}100%{transform:rotateY(0);box-shadow:0 22px 60px #30425618}}.bookEdge{position:absolute;top:0;bottom:0;width:7px;background:linear-gradient(#fff8,#b59b7b55,#fff8);opacity:.6}.bookEdge.left{left:0}.bookEdge.right{right:0}.sourceNote{font-size:10px;color:var(--muted);line-height:1.5;margin-top:10px}
+</style>
+</head>
+<body>
+<div class="app">
+<header class="top"><div class="logo">Spiritual</div><div class="om">ॐ</div></header>
+
+<section id="home" class="page active">
+ <div class="hero"><div class="eyebrow">Wisdom • Practice • Peace</div><h1>Let timeless wisdom guide your day.</h1><div class="search" onclick="openBook()">⌕ &nbsp; Search Bhagavad Gita…</div></div>
+ <div class="section"><h2>Explore</h2><span>Today</span></div>
+ <div class="grid">
+  <div class="card glass" onclick="openBook()"><div style="font-size:25px">📖</div><b>Bhagavad Gita</b><p>18 chapters • 700 verses</p></div>
+  <div class="card glass" onclick="go('chant')"><div style="font-size:25px">🕉️</div><b>Naam Chanting</b><p>108 counts • malas</p></div>
+ </div>
+ <div class="section"><h2>Verse of the Day</h2><span id="dayRef"></span></div>
+ <div class="card glass"><div class="verse" id="daySloka"></div><div class="meaning" id="dayHindi"></div><div class="ref" id="daySource"></div></div>
+</section>
+
+<section id="gita" class="page">
+ <div class="section"><h2>Bhagavad Gita</h2><span id="gitaStatus">Loading…</span></div>
+ <div class="gitaTools glass">
+   <input id="gitaSearch" type="search" placeholder="Search any word, verse, chapter or Hindi translation…" oninput="searchGita(this.value)">
+ </div>
+ <div id="gitaSearchResults" style="margin-top:10px"></div>
+ <div class="section"><h2 id="gitaRef">Chapter 1 • Verse 1</h2><span id="gitaSpeaker"></span></div>
+ <div class="gitaBook">
+  <article class="gitaVerse glass" id="gitaVerseCard">
+   <div class="bookEdge left"></div><div class="bookEdge right"></div>
+   <div class="gitaChapter" id="gitaChapterName">Chapter 1</div>
+   <div class="sanskrit" id="gitaSanskrit">धृतराष्ट्र उवाच ।<br>धर्मक्षेत्रे कुरुक्षेत्रे समवेता युयुत्सवः ।<br>मामकाः पाण्डवाश्चैव किमकुर्वत सञ्जय ॥१॥</div>
+   <div class="divider"></div>
+   <div class="hindiLabel">Hindi Translation</div>
+   <div class="gitaHindi" id="gitaHindi">धृतराष्ट्र बोले— हे संजय! धर्मभूमि कुरुक्षेत्र में युद्ध की इच्छा से एकत्र हुए मेरे और पाण्डु के पुत्रों ने क्या किया?</div>
+   <div class="row" style="margin-top:18px">
+    <button class="btn" onclick="prevVerse()">‹ Previous</button>
+    <button class="btn primary" onclick="bookmarkGitaVerse()">🔖 Save</button>
+    <button class="btn" onclick="nextVerse()">Next ›</button>
+   </div>
+   <div class="sourceNote">18 chapters • 700 verses • Sanskrit + Hindi translation<br><span style="font-size:9px">Source: Hindi Gita text corpus</span></div>
+  </article>
+ </div>
+</section>
+
+<section id="bookmarks" class="page">
+ <div class="section"><h2>Saved Shlokas</h2><span id="bookmarkCount">0 saved</span></div>
+ <div id="bookmarkList"></div>
+ <div id="bookmarkEmpty" class="card glass"><b>No saved shlokas yet</b><p>Save any Gita shloka with the 🔖 button.</p></div>
+</section>
+
+<section id="chant" class="page">
+ <div class="section"><h2>Naam Chanting</h2><span>108 = 1 mala</span></div>
+ <div class="chant glass">
+  <div class="big" id="hkCount">0</div><div style="font-size:11px;color:var(--muted)" id="hkMala">0 malas</div><div class="progress"><i id="hkBar"></i></div>
+  <div class="mantra">Hare Krishna Hare Krishna<br>Krishna Krishna Hare Hare<br>Hare Rama Hare Rama<br>Rama Rama Hare Hare</div>
+  <button class="tap" onclick="addChant('hk')"><div><span>Tap</span><small>Hare Krishna</small></div></button>
+  <div class="row"><button class="btn" onclick="undo()">Undo</button><button class="btn" onclick="reset()">Reset</button></div>
+ </div>
+ <div class="section"><h2>Radha Chant</h2><span>108 = 1 mala</span></div>
+ <div class="chant glass">
+  <div class="big" id="radhaCount">0</div><div style="font-size:11px;color:var(--muted)" id="radhaMala">0 malas</div><div class="progress"><i id="radhaBar"></i></div>
+  <div class="mantra" style="font-size:29px">Radha</div>
+  <button class="tap" onclick="addChant('radha')"><div><span>Radha</span><small>Tap</small></div></button>
+  <div class="row"><button class="btn" onclick="undoType('radha')">Undo</button><button class="btn" onclick="resetType('radha')">Reset</button></div>
+ </div>
+ <div class="section"><h2>Mala History</h2><span>Real saved data</span></div>
+ <div class="history glass">
+  <div class="row"><input id="histDate" type="date" onchange="renderHistory()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><select id="histRange" onchange="renderHistory()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><option value="day">Day</option><option value="month">Month</option><option value="year">Year</option></select></div>
+  <div id="historyList"></div>
+ </div>
+</section>
+
+<section id="stats" class="page">
+ <div class="section"><h2>Chanting History</h2><span>Real data only</span></div>
+ <div class="history glass"><div class="row"><input id="statsDate" type="date" onchange="renderStats()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><select id="statsRange" onchange="renderStats()" style="flex:1;padding:9px;border-radius:12px;border:1px solid #fff;background:#fff9"><option value="month">Month</option><option value="year">Year</option><option value="day">Day</option></select></div><div id="statsList"></div></div>
+</section>
+</div>
+
+<button class="fab" onclick="openAI()">✦</button>
+<nav class="nav">
+ <button data-page="home" class="active" onclick="go('home',this)">⌂<br>Home</button>
+ <button data-page="gita" onclick="go('gita',this)">📖<br>Gita</button>
+ <button data-page="chant" onclick="go('chant',this)">🕉<br>Chant</button>
+ <button data-page="bookmarks" onclick="go('bookmarks',this)">🔖<br>Saved</button>
+ <button data-page="stats" onclick="go('stats',this)">◴<br>History</button>
+</nav>
+
+<div id="ai" class="sheetWrap" onclick="if(event.target===this)closeAI()">
+ <div class="sheet"><button class="close" onclick="closeAI()">×</button><h2>Spiritual Search</h2><p>Choose how you want to ask.</p>
+  <button class="opt" onclick="typingSearch()">⌨ &nbsp; <b>Typing search</b><br><small>Open the keyboard and search the book</small></button>
+  <button class="opt" onclick="voiceSearch()">🎙 &nbsp; <b>Voice searching</b><br><small>Request microphone access and speak</small></button>
+ </div>
+</div>
+
+<script>
+const STORE='spiritual_v3';
+let data=JSON.parse(localStorage.getItem(STORE)||'{"last":"hk","sessions":{}}');
+let recognition=null, micStream=null;
+
+function save(){localStorage.setItem(STORE,JSON.stringify(data))}
+function dayKey(){return new Date().toISOString().slice(0,10)}
+function day(){return data.sessions[dayKey()]||{hk:0,radha:0}}
+function go(id,el){
+ const pages=['home','gita','chant','bookmarks','stats'];
+ const old=document.querySelector('.page.active'); const oldId=old?.id; const from=pages.indexOf(oldId); const to=pages.indexOf(id);
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active','slide-next','slide-prev'));
+ const target=document.getElementById(id); target.classList.add('active',to>=from?'slide-next':'slide-prev');
+ document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+ const active=el||document.querySelector('[data-page="'+id+'"]'); active?.classList.add('active');
+ document.querySelector('.nav')?.style.setProperty('--nav-index',Math.max(0,to));
+ if(id==='chant'||id==='stats')update(); if(id==='bookmarks')renderBookmarks(); if(id==='gita'&&!gitaData)loadGita();
+}
+const GITA_DATA_URL='https://raw.githubusercontent.com/kashishkhullar/gita_json/master/dataset_hindi.json';
+let gitaData=null,gitaIndex=0,gitaResults=[];
+async function loadGita(){
+ try{
+  const r=await fetch(GITA_DATA_URL,{cache:'force-cache'});
+  if(!r.ok)throw new Error('HTTP '+r.status);
+  const raw=await r.json();
+  const verses=[];
+  const chapters=[];
+  Object.keys(raw.chapters||{}).forEach(k=>{
+    const c=raw.chapters[k]; chapters.push({n:Number(k),name:c.name||('Chapter '+k)});
+  });
+  Object.keys(raw.verses||{}).forEach(ch=>{
+    Object.keys(raw.verses[ch]||{}).forEach(vn=>{
+      const v=raw.verses[ch][vn];
+      verses.push({chapter:Number(ch),verse:Number(String(vn).split('-')[0]),ref:ch+'.'+vn,sanskrit:v.text||'',hindi:v.meaning||'',iast:'',speaker:''});
+    });
+  });
+  verses.sort((a,b)=>a.chapter-b.chapter||a.verse-b.verse);
+  gitaData={verses,chapters};
+  renderGitaVerse(0);
+  gitaStatus.textContent='700 verses • 18 chapters';
+ }catch(e){
+  gitaStatus.textContent='Unable to load Gita data';
+  document.getElementById('gitaHindi').textContent='Gita text could not be loaded. Please open this preview with Live Server and refresh.';
+  console.error(e);
+ }
+}
+function renderGitaVerse(i,dir='none'){
+ if(!gitaData?.verses?.length)return;
+ gitaIndex=Math.max(0,Math.min(gitaData.verses.length-1,i));
+ const v=gitaData.verses[gitaIndex],c=gitaData.chapters.find(x=>x.n===v.chapter);
+ const card=document.getElementById('gitaVerseCard');
+ const apply=()=>{
+  gitaRef.textContent='Chapter '+v.chapter+' • Verse '+v.verse;
+  gitaSpeaker.textContent='';
+  gitaChapterName.textContent='Chapter '+v.chapter;
+  gitaSanskrit.textContent=v.sanskrit;
+  gitaHindi.textContent=v.hindi;
+  card.classList.remove('flipping-next','flipping-prev');
+ };
+ if(dir==='next'||dir==='prev'){
+   card.classList.remove('flipping-next','flipping-prev'); void card.offsetWidth;
+   card.classList.add(dir==='next'?'flipping-next':'flipping-prev');
+   setTimeout(apply,285); setTimeout(()=>card.classList.remove('flipping-next','flipping-prev'),640);
+ } else apply();
+}
+function prevVerse(){if(gitaData&&gitaIndex>0)renderGitaVerse(gitaIndex-1,'prev')}
+function nextVerse(){if(gitaData&&gitaIndex<gitaData.verses.length-1)renderGitaVerse(gitaIndex+1,'next')}
+function normalizeSearchText(value){return String(value||'').toLocaleLowerCase('en-IN').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[।॥,;:!?—–()\[\]{}'"\-]/g,' ').replace(/\s+/g,' ').trim()}
+function searchGita(q){
+ if(!gitaData)return; q=q.trim();
+ const box=document.getElementById('gitaSearchResults');
+ if(!q){gitaResults=[];box.innerHTML='';return}
+ const terms=normalizeSearchText(q).split(/\s+/).filter(Boolean);
+ gitaResults=gitaData.verses.filter(v=>{
+   const hay=normalizeSearchText([v.sanskrit,v.hindi,v.ref,'chapter '+v.chapter,'verse '+v.verse].join(' '));
+   return terms.every(t=>hay.includes(t));
+ }).slice(0,20);
+ box.innerHTML=gitaResults.length?`<div style="font-size:11px;color:var(--muted);margin:8px 3px 10px">${gitaResults.length}${gitaResults.length===20?'+':''} matching results</div>`+gitaResults.map((v,i)=>`<div class="searchResult glass" onclick="openSearchResult(${i})"><div class="srRef">Chapter ${v.chapter} • Verse ${v.verse}</div><div class="srText">${escapeHtml(v.sanskrit)}</div><div style="font-size:12px;color:var(--muted);margin-top:6px"><b>Hindi translation:</b> ${escapeHtml(v.hindi)}</div></div>`).join(''):'<div class="card glass"><p>No matching Gita text found.</p></div>';
+}
+function openSearchResult(i){const v=gitaResults[i];if(!v)return;const idx=gitaData.verses.indexOf(v);renderGitaVerse(idx);document.getElementById('gitaSearchResults').innerHTML='';window.scrollTo({top:0,behavior:'smooth'})}
+function escapeHtml(x){return String(x).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+function bookmarkGitaVerse(){
+ if(!gitaData)return;const v=gitaData.verses[gitaIndex];const key='spiritual_gita_bookmarks_v2';const a=JSON.parse(localStorage.getItem(key)||'[]');if(!a.some(x=>x.ref===v.ref))a.unshift({ref:v.ref,sanskrit:v.sanskrit,hindi:v.hindi});localStorage.setItem(key,JSON.stringify(a));renderBookmarks();
+}
+function openBook(){go('gita')}
+function continueReading(){openBook()}
+function renderBookmarks(){
+ const arr=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');bookmarkCount.textContent=arr.length+' saved';bookmarkEmpty.style.display=arr.length?'none':'block';
+ bookmarkList.innerHTML=arr.map((x,i)=>'<div class="card glass bookmarkItem"><b>Verse '+escapeHtml(x.ref)+'</b><p class="sanskrit" style="font-size:15px;text-align:left">'+escapeHtml(x.sanskrit)+'</p><p>'+escapeHtml(x.hindi)+'</p><button class="btn primary" onclick="openGitaBookmark('+i+')">Open shloka</button><button class="btn" style="margin-top:7px" onclick="deleteGitaBookmark('+i+')">Remove</button></div>').join('')
+}
+function openGitaBookmark(i){const a=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');const x=a[i];if(!x||!gitaData)return;const idx=gitaData.verses.findIndex(v=>v.ref===x.ref);go('gita');if(idx>=0)renderGitaVerse(idx)}
+function deleteGitaBookmark(i){const a=JSON.parse(localStorage.getItem('spiritual_gita_bookmarks_v2')||'[]');a.splice(i,1);localStorage.setItem('spiritual_gita_bookmarks_v2',JSON.stringify(a));renderBookmarks()}
+function openAI(){document.getElementById('ai').classList.add('open')}
+function closeAI(){document.getElementById('ai').classList.remove('open')}
+function typingSearch(){closeAI();openBook();setTimeout(()=>{document.getElementById('gitaSearch').focus();document.getElementById('gitaSearch').scrollIntoView({behavior:'smooth',block:'center'});},350)}
+async function voiceSearch(){
+ closeAI();openBook();
+ const R=window.SpeechRecognition||window.webkitSpeechRecognition;
+ if(R){
+  recognition=new R();recognition.lang='en-IN';recognition.interimResults=false;recognition.continuous=false;
+  recognition.onstart=()=>alert('Microphone is active. Speak now.');
+  recognition.onresult=e=>{const text=e.results[0][0].transcript;document.getElementById('gitaSearch').value=text;searchGita(text);document.getElementById('gitaSearch').scrollIntoView({behavior:'smooth',block:'center'});};
+  recognition.onerror=e=>{if(e.error==='not-allowed'||e.error==='service-not-allowed') micFallback(); else alert('Voice search error: '+e.error)};
+  recognition.onend=()=>{recognition=null};
+  try{recognition.start();return}catch(e){}
+ }
+ micFallback();
+}
+async function micFallback(){
+ try{
+  micStream=await navigator.mediaDevices.getUserMedia({audio:true});
+  alert('Microphone permission granted. This browser does not provide speech-to-text here. Use your device/Google voice keyboard to dictate into a search field.');
+  micStream.getTracks().forEach(t=>t.stop());micStream=null;
+ }catch(e){alert('Microphone permission was denied or unavailable. Please allow microphone access in the browser settings, or use Google/Gboard voice input.')}
+}
+function vibrate(){if(navigator.vibrate)navigator.vibrate([120,60,180])}
+function addChant(type){
+ const k=dayKey(),d=day(),before=Math.floor(d[type]/108);d[type]++;data.sessions[k]=d;data.last=type;save();update();
+ if(Math.floor(d[type]/108)>before)vibrate()
+}
+function undoType(type){const d=day();if(d[type]>0)d[type]--;data.last=type;if(d.hk===0&&d.radha===0)delete data.sessions[dayKey()];else data.sessions[dayKey()]=d;save();update()}
+function resetType(type){const d=day();d[type]=0;data.last=type;if(d.hk===0&&d.radha===0)delete data.sessions[dayKey()];else data.sessions[dayKey()]=d;save();update()}
+function undo(){undoType(data.last||'hk')}
+function reset(){resetType(data.last||'hk')}
+function completed(s){return{hk:Math.floor((s.hk||0)/108),radha:Math.floor((s.radha||0)/108)}}
+function update(){const d=day();hkCount.textContent=d.hk;hkMala.textContent=Math.floor(d.hk/108)+' malas';hkBar.style.width=(d.hk%108)/108*100+'%';radhaCount.textContent=d.radha;radhaMala.textContent=Math.floor(d.radha/108)+' malas';radhaBar.style.width=(d.radha%108)/108*100+'%';renderHistory();renderStats();renderBookmarks();updateGitaRecentMala()}
+function renderHistory(){
+ const base=histDate.value||dayKey(),range=histRange.value,arr=[];
+ Object.entries(data.sessions).forEach(([date,s])=>{const c=completed(s);if(!c.hk&&!c.radha)return;const d=new Date(date+'T12:00:00'),b=new Date(base+'T12:00:00');const ok=range==='day'?date===base:range==='month'?d.getFullYear()===b.getFullYear()&&d.getMonth()===b.getMonth():d.getFullYear()===b.getFullYear();if(ok)arr.push({date,...c})});
+ arr.sort((a,b)=>b.date.localeCompare(a.date));historyList.innerHTML=arr.length?arr.map(x=>'<div class="stat"><span>'+x.date+'</span><b>'+((x.hk||0)+(x.radha||0))+' malas</b></div>').join(''):'<p style="font-size:12px;color:var(--muted)">No completed malas for this period.</p>'
+}
+function renderStats(){
+ const base=statsDate.value||dayKey(),range=statsRange.value,t={hk:0,radha:0,days:0};
+ Object.entries(data.sessions).forEach(([date,s])=>{const c=completed(s),d=new Date(date+'T12:00:00'),b=new Date(base+'T12:00:00');const ok=range==='day'?date===base:range==='month'?d.getFullYear()===b.getFullYear()&&d.getMonth()===b.getMonth():d.getFullYear()===b.getFullYear();if(ok&&(c.hk+c.radha)){t.hk+=c.hk;t.radha+=c.radha;t.days++}});
+ statsList.innerHTML=t.days?'<div class="stat"><span>Hare Krishna</span><b>'+t.hk+' malas</b></div><div class="stat"><span>Radha Naam</span><b>'+t.radha+' malas</b></div><div class="stat"><span>Total</span><b>'+(t.hk+t.radha)+' malas</b></div><div class="stat"><span>Active days</span><b>'+t.days+'</b></div>':'<p style="font-size:12px;color:var(--muted)">No completed malas for this period.</p>'
+}
+const dayVerses=[
+ ['2.47','कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।','तुम्हारा अधिकार केवल कर्म करने में है, उसके फलों पर कभी नहीं।'],
+ ['2.14','मात्रास्पर्शास्तु कौन्तेय शीतोष्णसुखदुःखदाः।','इन्द्रियों के विषयों के संयोग से शीत-उष्ण और सुख-दुःख उत्पन्न होते हैं; इन्हें सहन करना चाहिए।'],
+ ['6.5','उद्धरेदात्मनात्मानं नात्मानमवसादयेत्।','मनुष्य को अपने द्वारा अपना उद्धार करना चाहिए और स्वयं को गिराना नहीं चाहिए।'],
+ ['12.13','अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च।','जो किसी प्राणी से द्वेष नहीं करता, सबका मित्र और करुणामय है, वह प्रिय है।'],
+ ['18.66','सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।','सब धर्मों को छोड़कर मेरी ही शरण में आओ।']
+];
+const v=dayVerses[new Date().getDate()%dayVerses.length];dayRef.textContent='Gita '+v[0];daySloka.textContent=v[1];dayHindi.textContent=v[2];daySource.textContent='Bhagavad Gita • Chapter '+v[0].split('.')[0]+' • Verse '+v[0].split('.')[1];
+histDate.value=dayKey();statsDate.value=dayKey();document.querySelector('.nav').style.setProperty('--nav-index','0');update();
+</script>
+</body>
+</html>
